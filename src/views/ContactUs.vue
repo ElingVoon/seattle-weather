@@ -1,6 +1,6 @@
 <template lang="html">
-  <h1>FAQ</h1>
-	<p>Lorem ipsum goes here</p>
+  <h1>Contact Us</h1>
+	<p>Contact us ipsum goes here</p>
 </template>
 
 <script>
