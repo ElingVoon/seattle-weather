@@ -10,8 +10,15 @@
     <router-link class="routerLink" to="/contactus">Contact Us</router-link>
     <!-- <router-link to="/faq">Faq</router-link> -->
   </div>
-
   <router-view/>
+
+  <div class="">
+    <div id="app">
+      <Home />
+    </div>
+  </div>
+
+
   <footer class="footer">
       <p><img class="footer-logo" src="./assets/seattle_weather_logo.png" alt="Seattle Weather Logo in white color"></p>
 
@@ -25,6 +32,14 @@
       <p>©  2021 Seattle Weather, LLC &nbsp;|&nbsp; Seattle, WA</p>
   </footer>
 </template>
+
+<script>
+  import Home from './views/Home.vue'
+  export default {
+
+  }
+
+</script>
 
 <style lang="scss">
 body {
@@ -88,7 +103,4 @@ body {
   color: #FFF;
   font-size: .7rem;
 }
-
-
-
 </style>
