@@ -12,7 +12,9 @@
 
 <!-- <div v-for="data in getWeatherData" :key="list.main"> -->
   <!-- <p>{{ airPollutionList }}</p> -->
-    <p>{{ airPollutionList }}</p>
+    <p>AQI: {{ aqi }}</p>
+    <p>PM2_5: {{ pm2_5 }}</p>
+    <p>PM10: {{ pm10 }}</p>
 </div>
 </template>
 
@@ -21,20 +23,24 @@ export default {
   name: 'Home',
   data() {
     return {
-      airPollutionList: []
-    };
+      aqi: "" ,
+      pm2_5:"" ,
+      pm10:""
+    }
   },
-  methods: {
-    getWeatherData(){
+  mounted() {
       fetch('http://api.openweathermap.org/data/2.5/air_pollution?lat=47&lon=-122&appid=edceab3dc505dc66289d3d18b0b1b542')
       .then (response => {
         return response.json()
         })
         .then ((json) => {
-          this.airPollutionList = json;
+          if(json.list.length < 1){
+            // TODO: show error or populate with dummy data - API returned no data
+          }
+          this.aqi = json.list[0].main.aqi
+          this.pm2_5 = json.list[0].components.pm2_5
+          this.pm10 = json.list[0].components.pm10
         })
-          .catch((err) => alert("ERROR", err));
-      }
     }
   }
 </script>
