@@ -1,5 +1,5 @@
 {
-  "name": "cool-routed-app",
+  "name": "seattle-weather",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "vue": "^3.0.0",
+    "vue-open-weather-widget": "^1.0.3",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {

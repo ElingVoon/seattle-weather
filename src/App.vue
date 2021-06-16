@@ -6,7 +6,7 @@
   <div id="nav">
     <router-link class="routerLink" to="/">Home</router-link> |
     <router-link class="routerLink" to="/climatefacts">Climate Facts</router-link> |
-    <router-link class="routerLink" to="/weatherjokes">Weather Jokes</router-link> |
+    <router-link class="routerLink" to="/airquality">Air Quality</router-link> |
     <router-link class="routerLink" to="/contactus">Contact Us</router-link>
     <!-- <router-link to="/faq">Faq</router-link> -->
   </div>
@@ -20,7 +20,7 @@
 
       <router-link class="routerLink" to="/">Home</router-link> |
       <router-link class="routerLink" to="/climatefacts">Climate Facts</router-link> |
-      <router-link class="routerLink" to="/weatherjokes">Weather Jokes</router-link> |
+      <router-link class="routerLink" to="/airquality">Air Quality</router-link> |
       <router-link class="routerLink" to="/contactus">Contact Us</router-link>
       <p>©  2021 Seattle Weather, LLC &nbsp;|&nbsp; Seattle, WA</p>
   </footer>
@@ -62,7 +62,7 @@ body {
  }
 
 .logo {
-  margin: 1rem auto;
+  margin: 3rem auto;
 }
 
 .footer {
@@ -88,7 +88,4 @@ body {
   color: #FFF;
   font-size: .7rem;
 }
-
-
-
 </style>

@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import ClimateFacts from '../views/ClimateFacts.vue'
-import WeatherJokes from '../views/WeatherJokes.vue'
+import AirQuality from '../views/AirQuality.vue'
 import ContactUs from '../views/ContactUs.vue'
 
 const routes = [
@@ -16,9 +16,9 @@ const routes = [
     component: ClimateFacts
   },
   {
-    path: '/weatherjokes',
-    name: 'WeatherJokes',
-    component: WeatherJokes
+    path: '/airquality',
+    name: 'AirQuality',
+    component: AirQuality
   },
   {
     path: '/contactus',
