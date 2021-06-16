@@ -1,43 +1,76 @@
 <template>
   <div class="">
-    <h1>Seattle Weather</h1>
+    <h1>Current Weather</h1>
+    <p>Temperature: {{ temp + '°F' }}  </p>
+    <p>Feels like: {{ feels_like + '°F'}}</p>
+    <p>Humidity: {{ humidity + '%' }}</p>
+    <p>id: {{ id }}</p>
+    <p>Weather: {{ weather }}</p>
+    <p>Clouds: {{ clouds }}</p>
+    <p><img v-bind:src="icon" alt="Icon depicting current weather"></p>
+    <p>Description: {{ description }}</p>
+    <p>Rain: {{ rain }}</p>
+    <p>Pressure: {{ pressure + 'mb' }}</p>
+    <p>Wind: {{ wind + 'mph' }}</p>
+    <!-- <p>Visibility: {{ visibility }}</p> -->
+
   </div>
-  <div>
-    <h1>Air Pollution</h1>
-    <button v-on:click="getWeatherData">Air Pollution Data</button>
-<!-- <div v-for="data in getWeatherData" :key="list.main"> -->
-  <!-- <p>{{ airPollutionList }}</p> -->
-    <p>{{ airPollutionList }}</p>
-    <p>Air quality Index: {{ aqi }}</p>
-    <p>PM2.5 (Fine particles matter): {{ pm2_5 }}</p>
-    <p>PM10 (Coarse particulate matter): {{ pm10 }}</p>
-</div>
 </template>
 
+
+
 <script>
-export default {
-  name: 'Home',
-  data() {
-    return {
-      aqi: "" ,
-      pm2_5: "" ,
-      pm10: ""
-    }
-  },
+            // const removedDecimal = Math.round(decimal);
+  export default {
+    name: 'currentWeather',
+    data() {
+      return {
+        temp: "" ,
+        feels_like: "" ,
+        humidity: "",
+        id:"",
+        weather:"",
+        clouds:"",
+        icon:"",
+        description:"",
+        rain:"",
+        pressure:"",
+        wind:"",
+        // visibility:""
+      }
+    },
+    method: {
+      removedDecimal() {
+      this.temp = Math.round(0);
+      }
+    },
 
       mounted() {
-        fetch('http://api.openweathermap.org/data/2.5/air_pollution?lat=47&lon=-122&appid=edceab3dc505dc66289d3d18b0b1b542')
+        fetch('http://api.openweathermap.org/data/2.5/weather?lat=47&lon=122&mode=json&units=imperial&appid=edceab3dc505dc66289d3d18b0b1b542')
         .then (response => {
           return response.json()
           })
           .then ((json) => {
-            if (json.list.length < 1) {
+            if (json.weather.length < 1) {
               //TODO: show error or populate with dummy data - API retruned no data
             }
-            this.aqi = json.list[0].main.aqi
-            this.pm2_5 = json.list[0].components.pm2_5
-            this.pm10 = json.list[0].components.pm10
 
+            this.temp = json.main.temp
+            this.feels_like = json.main.feels_like
+            this.humidity = json.main.humidity
+            //weather.id - weather condition id
+            this.id = json.weather[0].id
+            this.weather = json.weather[0].main
+            this.clouds = json.clouds.all
+            //weather.icon - weather icon id, http://openweathermap.org/img/wn/10d@2x.png
+            this.icon = `http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`
+            this.description = json.weather[0].description
+            this.rain = json.rain
+            this.pressure = json.main.pressure
+            this.wind = json.wind.speed
+            // this.wind2 = json.wind.direction.name
+            // this.visibility = json.visibility.value
+            // this.precipitation = json.precipitation
         })
     }
   }
