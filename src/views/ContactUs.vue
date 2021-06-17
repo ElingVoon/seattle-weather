@@ -1,29 +1,31 @@
 <template lang="html">
-  <h1>Contact Us</h1>
-  <form @submit.prevent="handleSubmit">  <!-- // v-model directive 2-way data binding -->
-    <label>Name</label>
-    <input type="name" v-model="name" required>
+  <div class="main">
+    <h1 >Contact Us</h1>
+    <form @submit.prevent="handleSubmit">  <!-- // v-model directive 2-way data binding -->
+      <label>Name</label>
+      <input type="name" v-model="name" required>
 
-    <label>Email</label>
-    <input type="email" v-model="email" requried>
-    <div v-if="emailError" class="error">{{ emailError }}
-    </div>
+      <label>Email</label>
+      <input type="email" v-model="email" requried>
+      <div v-if="emailError" class="error">{{ emailError }}
+      </div>
 
-    <label>Role</label>
-    <select v-model="role">
-      <option value="developer">Web Developer</option>
-      <option value="designer">Web Designer</option>
-      <option value="none">None of the above</option>
-    </select>
+      <label>Role</label>
+      <select v-model="role">
+        <option value="developer">Web Developer</option>
+        <option value="designer">Web Designer</option>
+        <option value="none">None of the above</option>
+      </select>
 
-    <div class="terms">
-      <input type="checkbox" v-model="terms" required>
-      <label>Accept term and conditions</label>
-    </div>
-    <div class="submit">
-      <button type="button" name="button">Submit</button>
-    </div>
-  </form>
+      <div class="terms">
+        <input type="checkbox" v-model="terms" required>
+        <label>Accept term and conditions</label>
+      </div>
+      <div class="submit">
+        <button type="button" name="button">Submit</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -53,7 +55,7 @@ export default {
 
 <style lang="css" scoped>
   form {
-    max-width: 420px;
+    /* max-width: 420px; */
     margin: 30px auto;
     background: white;
     text-align: left;

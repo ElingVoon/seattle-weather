@@ -15,7 +15,7 @@
   <footer class="footer">
       <p><img class="footer-logo" src="./assets/seattle_weather_logo.png" alt="Seattle Weather Logo in white color"></p>
 
-      <p>Aborpos nisto inci tet aut que volupti beruptiberro to ex
+      <p>Seattle Weather ipsum inci tet aut que volupti beruptiberro to ex
       esseque<br> invenienihil imaximu scideru ptistiusam consequunt</p>
 
       <router-link class="routerLink" to="/">Home</router-link> |
@@ -33,6 +33,10 @@ body {
   text-align: left;
 }
 
+h1 {
+  font-weight: lighter;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,6 +47,10 @@ body {
 
 .routerLink{
      text-decoration: none;
+ }
+
+ .main {
+   margin: 0 10%;
  }
 
 #nav {
@@ -61,6 +69,11 @@ body {
 
 .header {
    background-image: url("./assets/cloud_bkg.jpg");
+   text-align: center;
+   // img {
+   //   margin-left: auto;
+   //   margin-right: auto;
+   // }
  }
 
 .logo {

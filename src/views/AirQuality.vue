@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <h1>Air Quality</h1>
     <button v-on:click="getWeatherData">Air Pollution Data</button>
     <p>Air quality Index: {{ aqi }}</p>

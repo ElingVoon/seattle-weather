@@ -1,23 +1,57 @@
 <template>
-  <div class="">
-    <h1>Current Weather</h1>
-    <p>Temperature: {{ temp + '°F' }}  </p>
-    <p>Feels like: {{ feels_like + '°F'}}</p>
-    <p>Humidity: {{ humidity + '%' }}</p>
-    <p>id: {{ id }}</p>
-    <p>Weather: {{ weather }}</p>
-    <p>Clouds: {{ clouds }}</p>
-    <p><img v-bind:src="icon" alt="Icon depicting current weather"></p>
-    <p>Description: {{ description }}</p>
-    <p>Rain: {{ rain }}</p>
-    <p>Pressure: {{ pressure + 'mb' }}</p>
-    <p>Wind: {{ wind + 'mph' }}</p>
-    <!-- <p>Visibility: {{ visibility }}</p> -->
-
+  <div class="main">
+    <div class="temp">
+      <img v-bind:src="icon" alt="Icon depicting current weather">{{ temp + '°F' }}
+    </div>
+      <div class="container">
+        <div class="item label">Feels like
+          <div class="itemtext">
+            {{ feels_like + '°F'}}
+          </div>
+        </div>
+        <div class="item label">Humidity
+          <div class="itemtext">
+            {{ humidity + '%' }}
+          </div>
+        </div>
+        <div class="item label">id
+          <div class="itemtext">
+            {{ id }}
+          </div>
+        </div>
+        <div class="item label">Weather
+          <div class="itemtext">
+           {{ weather }}
+          </div>
+        </div>
+        <div class="item label">Clouds
+          <div class="itemtext">
+            {{ clouds + '%'}}
+          </div>
+        </div>
+        <div class="item label">Description
+          <div class="itemtext">
+            {{ description }}
+          </div>
+        </div>
+        <div class="item label">Rain
+          <div class="itemtext">
+            {{ rain }}
+          </div>
+        </div>
+        <div class="item label">Pressure
+          <div class="itemtext">
+            {{ pressure + 'mb' }}
+          </div>
+        </div>
+        <div class="item label">Wind
+          <div class="itemtext">
+            {{ wind + 'mph' }}
+          </div>
+        </div>
+      </div>
   </div>
 </template>
-
-
 
 <script>
             // const removedDecimal = Math.round(decimal);
@@ -35,8 +69,7 @@
         description:"",
         rain:"",
         pressure:"",
-        wind:"",
-        // visibility:""
+        wind:""
       }
     },
     method: {
@@ -68,10 +101,55 @@
             this.rain = json.rain
             this.pressure = json.main.pressure
             this.wind = json.wind.speed
+            this.dt = json.dt
             // this.wind2 = json.wind.direction.name
-            // this.visibility = json.visibility.value
+
             // this.precipitation = json.precipitation
         })
     }
   }
 </script>
+
+<style lang="scss">
+img {
+  vertical-align: middle;
+}
+.container {
+  // border: 1px solid red;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.item {
+  // border: 1px dashed blue;
+  height: 50px;
+  box-sizing: border-box;
+  max-width: 50%;
+}
+.label {
+  color: #999;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.itemtext {
+  font-size: 1.5rem;
+  color: #444;
+  font-weight: lighter;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: .2rem;
+  padding-top: .2rem;
+}
+.main {
+  margin: 0 10%;
+}
+.temp {
+  font-size: 4rem;
+  color: #e96e50;
+  align: top;
+}
+
+</style>

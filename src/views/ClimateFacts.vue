@@ -1,6 +1,6 @@
 <template>
-  <div id="climatefacts">
-    <h1>Climate Facts page</h1>
+  <div id="climatefacts"  class="main">
+    <h1>Climate Facts</h1>
       <p>{{ factsList[factIndex] }}</p>
       <button v-on:click="randomize">Show me another fact</button>
       <p><a v-bind:href="url">credit</a></p>
