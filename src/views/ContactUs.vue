@@ -57,7 +57,6 @@ export default {
     margin: 30px auto;
     background: white;
     text-align: left;
-    padding: 40px;
     border-radius: 10px;
   }
   label {
