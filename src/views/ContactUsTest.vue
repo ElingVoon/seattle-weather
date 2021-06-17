@@ -30,11 +30,10 @@
 export default {
   data() {
     return {
-      name: '',
       email: '',
+      name: '',
       role: '',
-      terms: false, //boolean value
-      emailError:''
+      terms: false //boolean value
     }
   },
   methods: {
@@ -55,7 +54,7 @@ export default {
   form {
     max-width: 420px;
     margin: 30px auto;
-    background: white;
+    background: #444;
     text-align: left;
     padding: 40px;
     border-radius: 10px;
