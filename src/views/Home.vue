@@ -106,9 +106,6 @@
             this.pressure = json.main.pressure
             this.wind = json.wind.speed
             this.dt = json.dt
-            // this.wind2 = json.wind.direction.name
-
-            // this.precipitation = json.precipitation
         })
     }
   }
