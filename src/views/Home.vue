@@ -1,4 +1,5 @@
 <template>
+  <main>
   <div class="main">
     <div class="temp">
       <img v-bind:src="icon" alt="Icon depicting current weather">{{ temp + '°F' }}
@@ -24,21 +25,13 @@
            {{ weather }}
           </div>
         </div>
-        <div class="item label">Clouds
-          <div class="itemtext">
-            {{ clouds + '%'}}
-          </div>
-        </div>
+
         <div class="item label">Description
           <div class="itemtext">
             {{ description }}
           </div>
         </div>
-        <div class="item label">Rain
-          <div class="itemtext">
-            {{ rain }}
-          </div>
-        </div>
+
         <div class="item label">Pressure
           <div class="itemtext">
             {{ pressure + 'mb' }}
@@ -49,8 +42,19 @@
             {{ wind + 'mph' }}
           </div>
         </div>
+        <div class="item label">Clouds
+          <div class="itemtext">
+            {{ clouds + '%'}}
+          </div>
+        </div>
+        <div class="item label">Rain
+          <div class="itemtext">
+            {{ rain }}
+          </div>
+        </div>
       </div>
   </div>
+</main>
 </template>
 
 <script>

@@ -1,10 +1,12 @@
 <template>
+  <main>
   <div id="climatefacts"  class="main">
     <h1>Climate Facts</h1>
       <p>{{ factsList[factIndex] }}</p>
       <button v-on:click="randomize">Show me another fact</button>
       <p><a v-bind:href="url">credit</a></p>
   </div>
+</main>
 </template>
 
 <script>
@@ -27,3 +29,9 @@
     }
   }
 </script>
+
+<style lang="css" scoped>
+p {
+  line-height: 2rem;
+}
+</style>

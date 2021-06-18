@@ -1,4 +1,5 @@
-<template lang="html">
+<template>
+  <main>
   <div class="main">
     <h1 >Contact Us</h1>
     <form @submit.prevent="handleSubmit">  <!-- // v-model directive 2-way data binding -->
@@ -26,6 +27,7 @@
       </div>
     </form>
   </div>
+</main>
 </template>
 
 <script>

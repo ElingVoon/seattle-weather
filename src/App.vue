@@ -1,17 +1,18 @@
 <template>
-  <header class="header">
+  <header class="header" role="img">
       <img class="logo" src="./assets/seattle_weather_logo.png" alt="Seattle Weather Logo in white color">
   </header>
-
-  <div id="nav">
+<nav id="nav">
+  <div >
     <router-link class="routerLink" to="/">Home</router-link> |
     <router-link class="routerLink" to="/climatefacts">Climate Facts</router-link> |
     <router-link class="routerLink" to="/airquality">Air Quality</router-link> |
     <router-link class="routerLink" to="/contactus">Contact Us</router-link>
     <!-- <router-link to="/faq">Faq</router-link> -->
   </div>
-
+</nav>
   <router-view/>
+
   <footer class="footer">
       <p><img class="footer-logo" src="./assets/seattle_weather_logo.png" alt="Seattle Weather Logo in white color"></p>
 
@@ -56,6 +57,7 @@ h1 {
 #nav {
   padding: 30px;
   text-align: center;
+  font-weight: lighter;
 
   a {
     font-weight: bold;

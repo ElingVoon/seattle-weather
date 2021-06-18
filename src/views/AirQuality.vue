@@ -1,4 +1,5 @@
 <template>
+  <main>
   <div class="main">
     <h1>Air Quality</h1>
     <button v-on:click="getWeatherData">Air Pollution Data</button>
@@ -6,6 +7,7 @@
     <p>PM2.5 (Fine particles matter): {{ pm2_5 }}</p>
     <p>PM10 (Coarse particulate matter): {{ pm10 }}</p>
 </div>
+</main>
 </template>
 
 
