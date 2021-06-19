@@ -15,11 +15,7 @@
             {{ humidity + '%' }}
           </div>
         </div>
-        <div class="item label">id
-          <div class="itemtext">
-            {{ id }}
-          </div>
-        </div>
+
         <div class="item label">Weather
           <div class="itemtext">
            {{ weather }}
@@ -66,7 +62,6 @@
         temp: "" ,
         feels_like: "" ,
         humidity: "",
-        id:"",
         weather:"",
         clouds:"",
         icon:"",
@@ -76,14 +71,11 @@
         wind:""
       }
     },
-    method: {
-      removedDecimal() {
-      $.round = Math.round();
-      }
-    },
+
+
 
       mounted() {
-        fetch('http://api.openweathermap.org/data/2.5/weather?lat=47&lon=122&mode=json&units=imperial&appid=edceab3dc505dc66289d3d18b0b1b542')
+        fetch('https://api.openweathermap.org/data/2.5/weather?lat=47.60&lon=-122.33&mode=json&units=imperial&appid=edceab3dc505dc66289d3d18b0b1b542')
         .then (response => {
           return response.json()
           })
@@ -95,8 +87,6 @@
             this.temp = json.main.temp
             this.feels_like = json.main.feels_like
             this.humidity = json.main.humidity
-            //weather.id - weather condition id
-            this.id = json.weather[0].id
             this.weather = json.weather[0].main
             this.clouds = json.clouds.all
             //weather.icon - weather icon id, http://openweathermap.org/img/wn/10d@2x.png
@@ -117,7 +107,7 @@ img {
 }
 .container {
   // border: 1px solid red;
-  height: 250px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -152,5 +142,4 @@ img {
   color: #e96e50;
   align: top;
 }
-
 </style>
