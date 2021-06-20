@@ -2,17 +2,17 @@
   <main>
   <div class="main">
     <div class="temp">
-      <img v-bind:src="icon" alt="Icon depicting current weather">{{ temp }}°F
+      <img v-bind:src="icon" alt="Icon depicting current weather">{{ temp + '°F' }}
     </div>
       <div class="container">
         <div class="item label">Feels like
           <div class="itemtext">
-            {{ feels_like}}°F
+            {{ feels_like + '°F'}}
           </div>
         </div>
         <div class="item label">Humidity
           <div class="itemtext">
-            {{ humidity }}%
+            {{ humidity + '%' }}
           </div>
         </div>
 
@@ -30,17 +30,17 @@
 
         <div class="item label">Pressure
           <div class="itemtext">
-            {{ pressure }}mb
+            {{ pressure + 'mb' }}
           </div>
         </div>
         <div class="item label">Wind
           <div class="itemtext">
-            {{ wind }}mph
+            {{ wind + 'mph' }}
           </div>
         </div>
         <div class="item label">Clouds
           <div class="itemtext">
-            {{ clouds }}%
+            {{ clouds + '%'}}
           </div>
         </div>
         <div class="item label">Rain
@@ -80,24 +80,22 @@
           return response.json()
           })
           .then ((json) => {
-            if (json.weather.length < 0) {
+            if (json.weather.length < 1) {
               //TODO: show error or populate with dummy data - API retruned no data
             }
 
-            this.temp = Math.round(json.main.temp);
-            this.feels_like = Math.round(json.main.feels_like);
-            this.humidity = json.main.humidity;
-            this.weather = json.weather[0].main;
-            this.clouds = json.clouds.all;
+            this.temp = Math.round(json.main.temp)
+            this.feels_like = Math.round(json.main.feels_like)
+            this.humidity = json.main.humidity
+            this.weather = json.weather[0].main
+            this.clouds = json.clouds.all
             //weather.icon - weather icon id, http://openweathermap.org/img/wn/10d@2x.png
-            this.icon = `http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`;
-            this.description = json.weather[0].description;
-            this.rain = json.rain;
-            this.pressure = json.main.pressure;
-            this.wind = json.wind.speed;
-            this.dt = json.dt;
-          }).catch(error => {
-            console.log(errors)
+            this.icon = `http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`
+            this.description = json.weather[0].description
+            this.rain = json.rain
+            this.pressure = json.main.pressure
+            this.wind = json.wind.speed
+            this.dt = json.dt
         })
     }
   }
