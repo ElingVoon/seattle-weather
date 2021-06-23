@@ -80,7 +80,7 @@
           return response.json()
           })
           .then ((json) => {
-            if (json.weather.length < 1) {
+            if (json.weather.length < 0) {
               //TODO: show error or populate with dummy data - API retruned no data
             }
 
