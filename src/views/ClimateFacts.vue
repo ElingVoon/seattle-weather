@@ -9,6 +9,7 @@
 
 <script>
   export default {
+
     name: 'climatefacts',
     data(){
       return {
@@ -22,14 +23,14 @@
             '$1.16 trillion in damages - Over the past 15 years (2005-2019), there have been 156 separate billion-dollar weather or climate disasters in the U.S that have cost a combined $1.16 trillion in damages.',
 
             'A month-long cyclone? - The longest-lived tropical cyclone (hurricane) on record was the Pacific’s Hurricane John, which lasted 31 days in 1994, from August 10–September 10.'
-        ],
-        // Return a random fact in the factIndex
-        methods: {
-            randomize: function() {
-                this.factIndex = Math.floor(Math.random() * (this.factsList.length));
-            }
-        }
+        ]
       }
+    },
+    // Return a random fact in the factIndex
+    methods: {
+        randomize: function() {
+            this.factIndex = Math.floor(Math.random() * (this.factsList.length));
+        }
     }
   }
 </script>
