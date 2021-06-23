@@ -38,4 +38,11 @@
 p {
   line-height: 2rem;
 }
+button {
+  background: #0b6dff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: white;
+  border-radius: 10px;
+}
 </style>
