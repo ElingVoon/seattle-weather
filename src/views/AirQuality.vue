@@ -30,7 +30,7 @@
       </div>
       <div class="item label">CO (Carbon monoxide)
         <div class="itemtext">
-          {{ co + 'μg/m3'}}
+          {{ co + ' μg/m3'}}
         </div>
       </div>
     </div>

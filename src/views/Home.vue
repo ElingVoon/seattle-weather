@@ -30,12 +30,12 @@
 
         <div class="item label">Pressure
           <div class="itemtext">
-            {{ pressure + 'mb' }}
+            {{ pressure + ' mb' }}
           </div>
         </div>
         <div class="item label">Wind
           <div class="itemtext">
-            {{ wind + 'mph' }}
+            {{ wind + ' mph' }}
           </div>
         </div>
         <div class="item label">Clouds
