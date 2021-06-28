@@ -60,11 +60,12 @@ h1 {
   font-weight: lighter;
 
   a {
-    font-weight: bold;
+    font-weight: lighter;
     color: #666666;
 
     &.router-link-exact-active {
       color: #1E90FF;
+      font-weight: bold;
     }
   }
 }
@@ -97,6 +98,8 @@ h1 {
     color: #fff;
   }
 }
+
+
 .footer-logo {
   width: 7rem;
 }
