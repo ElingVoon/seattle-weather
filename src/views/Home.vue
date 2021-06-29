@@ -1,6 +1,9 @@
 <template>
   <main>
   <div class="main">
+
+      <div class="item label" v-show="date">{{ date }} | {{ time }}</div>
+      
     <div class="temp">
       <img v-bind:src="icon" alt="Icon depicting current weather">{{ temp + '°F' }}
     </div>
@@ -8,6 +11,11 @@
         <div class="item label">Feels like
           <div class="itemtext">
             {{ feels_like + '°F'}}
+          </div>
+        </div>
+        <div class="item label">Low - High
+          <div class="itemtext">
+            {{ temp_min + '°F' + ' - '}}{{ temp_max + '°F' }}
           </div>
         </div>
         <div class="item label">Humidity
@@ -59,8 +67,12 @@
     name: 'currentWeather',
     data() {
       return {
+        date: "",
+        time: "",
         temp: "" ,
         feels_like: "" ,
+        temp_min: "",
+        temp_max: "",
         humidity: "",
         weather:"",
         clouds:"",
@@ -71,8 +83,15 @@
         wind:""
       }
     },
-
-
+//
+    methods:{
+      getDate: function () {
+      return new Date().toLocaleDateString('default', { day: 'numeric', weekday: 'long', month:'long' });
+      },
+      getTime: function () {
+        return new Date().toLocaleTimeString([], { hour: '2-digit', minute:'2-digit' });
+      },
+    },
 
       mounted() {
         fetch('https://api.openweathermap.org/data/2.5/weather?lat=47.60&lon=-122.33&mode=json&units=imperial&appid=edceab3dc505dc66289d3d18b0b1b542')
@@ -86,6 +105,8 @@
 
             this.temp = Math.round(json.main.temp)
             this.feels_like = Math.round(json.main.feels_like)
+            this.temp_min = Math.round(json.main.temp_min)
+            this.temp_max = Math.round(json.main.temp_max)
             this.humidity = json.main.humidity
             this.weather = json.weather[0].main
             this.clouds = json.clouds.all
@@ -95,7 +116,10 @@
             this.rain = json.rain
             this.pressure = json.main.pressure
             this.wind = json.wind.speed
-            this.dt = json.dt
+            // this.dt = json.dt
+            this.date = this.getDate();
+            this.time = this.getTime();
+            this.timestamp = this.getTimestamp();
         })
     }
   }

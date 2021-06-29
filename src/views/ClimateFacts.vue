@@ -1,26 +1,21 @@
 <template>
-<div class="main">
-  <h1>Climate Facts</h1>
-    <div id="climatefacts" class="flex-container">
-      <div class="flex-left">
-        <h3>{{ factsList[factIndex].title }} </h3>
-        <p>{{ factsList[factIndex].descr }}</p>
+  <div class="main">
+    <h1>Climate Facts</h1>
+      <div id="climatefacts" class="flex-container">
+        <div class="flex-left">
+          <h3>{{ factsList[factIndex].title }} </h3>
+          <p>{{ factsList[factIndex].descr }}</p>
+        </div>
 
+        <div class="flex-right">
+          <button v-on:click="randomize"><font-awesome-icon :icon="['fas', 'sync-alt']" /> Next fact</button>
+          <a v-bind:href="url">credit</a>
+        </div>
       </div>
-      <div class="flex-right">
-
-        <font-awesome-icon :icon="['fas', 'sync-alt']" />
-
-        <button v-on:click="randomize">Show me another fact</button>
-        <a v-bind:href="url">credit</a>
-      </div>
-    </div>
-</div>
+  </div>
 </template>
 
 <script>
-
-
   export default {
     name: 'climatefacts',
     data(){
@@ -62,61 +57,61 @@
 </script>
 
 <style lang="css" scoped>
-.flex-container {
-  display: flex;
-  flex-direction: row;
-}
-.flex-left {
-    width: 75%;
-    height: 100vh;
-    border-right: 1px solid #999;
-    padding-right: 2rem;
-}
-.flex-right {
-    width: 25%;
-    padding-left: 2rem;
-}
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-left {
+      width: 75%;
+      height: 100vh;
+      border-right: 1px solid #999;
+      padding-right: 2rem;
+  }
+  .flex-right {
+      width: 25%;
+      padding-left: 2rem;
+  }
 
-img {
-  -webkit-filter: hue-rotate(180deg);
-  filter: hue-rotate(180deg);
-}
+  img {
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg);
+  }
 
-h3 {
-  font-size: 3rem;
-  font-weight: lighter;
-  color: #e96e50;
-  margin-top: -.75rem;
-}
+  h3 {
+    font-size: 3rem;
+    font-weight: lighter;
+    color: #e96e50;
+    margin-top: -.75rem;
+  }
 
-p {
-  line-height: 2rem;
-  font-weight: lighter;
-  margin-top: -2rem;
-}
+  p {
+    line-height: 2rem;
+    font-weight: lighter;
+    margin-top: -2rem;
+  }
 
+  a {
+    padding-left: 1rem;
+    text-decoration: none;
+    font-size: .8rem;
+    color: #0b6dff;
+  }
 
-a {
-  padding-left: 1rem;
-  text-decoration: none;
-  font-size: .8rem;
-  color: #0b6dff;
-}
+  button {
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: .9rem; /* Set a font size */
+    font-weight: lighter;
+    cursor: pointer; /* Mouse pointer on hover */
+  }
 
-button {
-  background-color: DodgerBlue; /* Blue background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-size: .75rem; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
-}
-
-/* button {
-  background: #0b6dff;
-  padding: 10px 20px;
-  margin-top: 20px;
-  color: white;
-  border-radius: 10px;
-} */
+  /* button {
+    background: #0b6dff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 10px;
+  } */
 </style>

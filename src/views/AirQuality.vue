@@ -70,44 +70,44 @@
 </script>
 
 <style lang="scss">
-img {
-  vertical-align: middle;
-}
-.container {
-  // border: 1px solid red;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-.item {
-  // border: 1px dashed blue;
-  height: 50px;
-  box-sizing: border-box;
-  max-width: 50%;
-}
-.label {
-  color: #999;
-  font-size: .7rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-.itemtext {
-  font-size: 1.5rem;
-  color: #444;
-  font-weight: lighter;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: .2rem;
-  padding-top: .2rem;
-}
-.main {
-  margin: 0 10%;
-}
-.temp {
-  font-size: 4rem;
-  color: #e96e50;
-  align: top;
-}
+  img {
+    vertical-align: middle;
+  }
+  .container {
+    // border: 1px solid red;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .item {
+    // border: 1px dashed blue;
+    height: 50px;
+    box-sizing: border-box;
+    max-width: 50%;
+  }
+  .label {
+    color: #999;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  .itemtext {
+    font-size: 1.5rem;
+    color: #444;
+    font-weight: lighter;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: .2rem;
+    padding-top: .2rem;
+  }
+  .main {
+    margin: 0 10%;
+  }
+  .temp {
+    font-size: 4rem;
+    color: #e96e50;
+    align: top;
+  }
 </style>

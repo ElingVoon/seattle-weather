@@ -65,7 +65,7 @@ h1 {
 
     &.router-link-exact-active {
       color: #1E90FF;
-      font-weight: bold;
+      font-weight: lighter;
     }
   }
 }
@@ -81,6 +81,7 @@ h1 {
 
 .logo {
   margin: 3rem auto;
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.2));
 }
 
 .footer {
