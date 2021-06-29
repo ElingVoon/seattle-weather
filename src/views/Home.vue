@@ -3,7 +3,7 @@
   <div class="main">
 
       <div class="item label" v-show="date">{{ date }} | {{ time }}</div>
-      
+
     <div class="temp">
       <img v-bind:src="icon" alt="Icon depicting current weather">{{ temp + '°F' }}
     </div>
@@ -83,13 +83,13 @@
         wind:""
       }
     },
-//
+
     methods:{
       getDate: function () {
       return new Date().toLocaleDateString('default', { day: 'numeric', weekday: 'long', month:'long' });
       },
       getTime: function () {
-        return new Date().toLocaleTimeString([], { hour: '2-digit', minute:'2-digit' });
+        return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       },
     },
 
