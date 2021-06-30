@@ -93,7 +93,7 @@ export default {
     padding: 10px 20px;
     margin-top: 20px;
     color: white;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   .submit {
     text-align: center;

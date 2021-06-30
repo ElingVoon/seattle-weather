@@ -4,9 +4,9 @@
   </header>
 <nav id="nav">
   <div >
-    <router-link class="routerLink" to="/">Home</router-link> |
-    <router-link class="routerLink" to="/climatefacts">Climate Facts</router-link> |
-    <router-link class="routerLink" to="/airquality">Air Quality</router-link> |
+    <router-link class="routerLink" to="/">Home</router-link>
+    <router-link class="routerLink" to="/climatefacts">Climate Facts</router-link>
+    <router-link class="routerLink" to="/airquality">Air Quality</router-link>
     <router-link class="routerLink" to="/contactus">Contact Us</router-link>
     <!-- <router-link to="/faq">Faq</router-link> -->
   </div>
@@ -55,24 +55,32 @@ h1 {
  }
 
 #nav {
-  padding: 30px;
+  padding: .75rem;
   text-align: center;
   font-weight: lighter;
+  background-color: #212121;
+  font-size: .9rem;
 
   a {
     font-weight: lighter;
-    color: #666666;
+    color: #fff;
+    padding: .75rem;
 
     &.router-link-exact-active {
-      color: #1E90FF;
+      color: #fff;
       font-weight: lighter;
+      background-color: #1E90FF;
+      padding: .75rem;
     }
   }
 }
-
+// background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+// 45deg, rgba(0, 0, 0, .1), rgba(255, 141, 0, .5
+// background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 .header {
-   background-image: url("./assets/cloud_bkg.jpg");
+   background-image: linear-gradient(-45deg, rgba(0, 0, 0, .1), rgba(68, 68, 68, .5)), url("./assets/cloud_bkg.jpg");
    text-align: center;
+   filter: contrast(1.2);
    // img {
    //   margin-left: auto;
    //   margin-right: auto;
@@ -99,7 +107,6 @@ h1 {
     color: #fff;
   }
 }
-
 
 .footer-logo {
   width: 7rem;

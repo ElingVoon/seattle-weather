@@ -2,7 +2,7 @@
   <main>
   <div class="main">
 
-      <div class="item label" v-show="date">{{ date }} | {{ time }}</div>
+      <span class="item label" v-show="date">{{ date }} | {{ time }}</span>
 
     <div class="temp">
       <img v-bind:src="icon" alt="Icon depicting current weather">{{ temp + '°F' }}
@@ -139,9 +139,9 @@ img {
 }
 .item {
   // border: 1px dashed blue;
-  height: 50px;
+  height: 1rem;
   box-sizing: border-box;
-  max-width: 50%;
+  max-width: 70%;
 }
 .label {
   color: #999;
@@ -162,7 +162,7 @@ img {
   margin: 0 10%;
 }
 .temp {
-  font-size: 4rem;
+  font-size: 1rem;
   color: #e96e50;
   align: top;
 }

@@ -8,7 +8,7 @@
         </div>
 
         <div class="flex-right">
-          <button v-on:click="randomize"><font-awesome-icon :icon="['fas', 'sync-alt']" /> Next fact</button>
+          <button v-on:click="randomize"><font-awesome-icon class="fas fas-spin-hover"  :icon="['fas', 'sync-alt']" /> Next Fact</button>
           <a v-bind:href="url">credit</a>
         </div>
       </div>
@@ -63,7 +63,7 @@
   }
   .flex-left {
       width: 75%;
-      height: 100vh;
+      height: auto; /*fixed height */
       border-right: 1px solid #999;
       padding-right: 2rem;
   }
@@ -78,7 +78,7 @@
   }
 
   h3 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: lighter;
     color: #e96e50;
     margin-top: -.75rem;
@@ -102,10 +102,42 @@
     border: none; /* Remove borders */
     color: white; /* White text */
     padding: 12px 16px; /* Some padding */
-    font-size: .9rem; /* Set a font size */
+    font-size: .75rem; /* Set a font size */
     font-weight: lighter;
+    border-radius: 5%;
     cursor: pointer; /* Mouse pointer on hover */
   }
+
+  .fas {
+    font-size: 1.5rem; /* Set a font size */
+  }
+  .fas-spin-hover:hover {
+    animation: fas-spin 1s linear;
+  }
+
+  @-webkit-keyframes
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
+  @keyframes fas-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  /* button:hover {
+  transform: scale(1.05, 1.05);
+  } */
+
+
+
 
   /* button {
     background: #0b6dff;
