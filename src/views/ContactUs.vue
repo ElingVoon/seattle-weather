@@ -26,7 +26,11 @@
         <button type="button" name="button">Submit</button>
       </div>
     </form>
+    <p>name: {{ name }}</p>
+    <p>email: {{ email }}</p>
+
   </div>
+
 </main>
 </template>
 

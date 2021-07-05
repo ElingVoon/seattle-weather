@@ -119,7 +119,6 @@
             // this.dt = json.dt
             this.date = this.getDate();
             this.time = this.getTime();
-            this.timestamp = this.getTimestamp();
         })
     }
   }

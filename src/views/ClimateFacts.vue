@@ -112,7 +112,7 @@
     font-size: 1.5rem; /* Set a font size */
   }
   .fas-spin-hover:hover {
-    animation: fas-spin 1s linear;
+    animation: fas-spin 1s linear; /* infinite is opposite */
   }
 
   @-webkit-keyframes

@@ -4,6 +4,8 @@ import ClimateFacts from '../views/ClimateFacts.vue'
 import AirQuality from '../views/AirQuality.vue'
 import ContactUs from '../views/ContactUs.vue'
 
+
+
 const routes = [
   {
     path: '/',

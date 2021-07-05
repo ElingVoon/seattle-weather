@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
+import {  } from "@fortawesome/free-solid-svg-icons";
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
